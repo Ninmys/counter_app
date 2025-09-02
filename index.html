@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kubernetes Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f6fa;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #3498db;
+      color: white;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #count {
+      font-size: 28px;
+      margin-top: 20px;
+      color: #e67e22;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧮 Counter App</h1>
+  <p>Click the buttons to increase or decrease the counter.</p>
+  
+  <button onclick="decrement()">➖ Decrease</button>
+  <button onclick="increment()">➕ Increase</button>
+  
+  <div id="count">0</div>
+  
+  <script>
+    let count = 0;
+    function increment() {
+      count++;
+      document.getElementById("count").innerText = count;
+    }
+    function decrement() {
+      count--;
+      document.getElementById("count").innerText = count;
+    }
+  </script>
+
+  <div class="footer">© 2025 Counter Sample App</div>
+</body>
+</html>
