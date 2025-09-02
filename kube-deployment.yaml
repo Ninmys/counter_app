@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-app-deployment
+  labels:
+    app: counter-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: counter-app
+  template:
+    metadata:
+      labels:
+        app: counter-app
+    spec:
+      containers:
+        - name: counter-app
+          image: nithinmys/counter-app:v1   # replace with your repo/tag
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter-app-service
+spec:
+  selector:
+    app: counter-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30100
+  type: NodePort
