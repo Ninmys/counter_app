@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: counter-app
-          image: nithinmys/counter-app:v1   # replace with your repo/tag
+          image: nithinmys/counter-app:v2   # replace with your repo/tag
           ports:
             - containerPort: 80
 ---
